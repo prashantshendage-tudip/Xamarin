@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TestXamarinForm.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:TestXamarinForm">
+
+    <ContentPage.Padding>
+        <OnPlatform
+            x:TypeArguments="Thickness"
+            Android="20, 20, 20, 20"
+            iOS="20, 40, 20, 20" />
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <ContentView>
+            <ListView x:Name="lstView" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout
+                                    BackgroundColor="Blue"
+                                    HorizontalOptions="Fill"
+                                    Orientation="Vertical">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label FontSize="24" Text="{Binding Name}" />
+                                        <Label Text="{Binding Type}" />
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions="Start" Orientation="Horizontal">
+                                        <Image Source="{Binding Image}" />
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions="End" Orientation="Horizontal">
+                                        <Button
+                                            BackgroundColor="Green"
+                                            Text="Take Now"
+                                            TextColor="Black" />
+                                        <Button
+                                            BackgroundColor="Yellow"
+                                            Text="Take later"
+                                            TextColor="Black" />
+                                        <Button
+                                            BackgroundColor="Red"
+                                            Text="Skip"
+                                            TextColor="Black" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ContentView>
+    </ContentPage.Content>
+
+</ContentPage>
